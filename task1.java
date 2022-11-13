@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class task1
 {
@@ -36,7 +37,7 @@ public static void main(String args[])
     
     ch=sc.nextInt();
     
-    float q, exp=0.0f, sine=0.0f, cosine=0.0f;
+    float quo=0.0f, exp=0.0f, sine=0.0f, cosine=0.0f;
     switch(ch)
     {
         case 1:
@@ -64,8 +65,8 @@ public static void main(String args[])
         System.out.println("Enter the values of a and b respectively: ");
         a=sc.nextInt();
         b=sc.nextInt();
-        q=a/b;
-        System.out.println("a/b = "+q);
+        quo=a/b;
+        System.out.println("a/b = "+quo);
         break;
 
         case 5:
@@ -83,7 +84,7 @@ public static void main(String args[])
         x=sc.nextFloat();
         int y=sc.nextInt();
         System.out.println("x^y = "+x+"^"+y+" = "+pow(y));
-        break;
+        break;  
     
         case 7: 
         System.out.println("Enter the value of x:");
