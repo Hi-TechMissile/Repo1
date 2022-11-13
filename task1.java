@@ -5,9 +5,9 @@ public class task1
     
         static int ch, a, b;
         static float x;
-        public static int fact(int n)
+        public static long fact(int n)
         {
-            int res=1;
+            long res=1;
             for(int i=n;i>=1;i--)
                 res=res*i;
             return res;
