@@ -28,13 +28,15 @@ public class task1
         } 
 public static void main(String args[])
 {
-    Scanner sc=new Scanner(System.in);
+    
     System.out.println("Welcome to task 1 - Calculator Program.");
     System.out.println("Following are the operations that can be performed; Select the operation, type the number and press Enter:");
+    Scanner sc=new Scanner(System.in);
+    
+        
     System.out.println("1. Addition of 2 variables\n2. Difference between 2 variables");
     System.out.println("3. Product of 2 variables\n4. Division of one variable by the other ");
     System.out.println("5. Exponentiation of a variable with base e (e^x)\n6. x^y\n7. sin(x)\n8. cos(x)\n9. tan(x)");
-    
     ch=sc.nextInt();
     
     float quo=0.0f, exp=0.0f, sine=0.0f, cosine=0.0f;
@@ -118,5 +120,7 @@ public static void main(String args[])
 
     }
     sc.close();
+    
 }
+
 }
