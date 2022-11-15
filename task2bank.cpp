@@ -1,8 +1,9 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include <fstream>
+#include <conio.h>
 using namespace std;
-int ch1;
+char ch1;
 string name(string user)
 {
     fstream fin;
@@ -182,8 +183,8 @@ int main()
     cout<<endl<<"Welcome to the IITI ATM."<<endl<<"========================"<<endl<<"This program was created by a first year B. Tech. student at IIT, Indore."<<endl;
     cout<<"========================================================================="<<endl;
     cout<<endl<<"Select an option to start:"<<endl;
-    cout<<"1. Create a new Account."<<endl<<"2. Login to your Account."<<endl<<"(press any other number to quit)"<<endl<<endl;
-    int ch;
+    cout<<"1. Create a new Account."<<endl<<"2. Login to your Account."<<endl<<"(press any key to quit)"<<endl<<endl;
+    char ch;
     cin>>ch;
      
     string uname="",pword="",confirm;
@@ -193,7 +194,7 @@ int main()
     switch(ch)
     {
         
-        case 1:
+        case '1':
         
         cout<<endl<<"Enter new Account username (without any blank spaces): ";
         cin>>uname;
@@ -224,7 +225,7 @@ int main()
         break;
         
        
-        case 2:
+        case '2':
         
         do
         {
@@ -237,15 +238,14 @@ int main()
         }while(uname!=name(uname) || pword!=code(uname));
         cout<<"User authentication successful. Welcome."<<endl<<"DO NOT SHARE YOUR ACCOUNT PASSWORD/PIN WITH ANYONE."<<endl<<endl;
          
-        cout<<"Select an operation:"<<endl<<"1. Cash deposit."<<endl<<"2. Cash withdrawal."<<endl<<"3. Transfer money to another Account."<<endl<<"4. View current Account balance only."<<endl;
-        cout<<"(press any other number to quit)"<<endl<<endl;
+        cout<<"Select an operation:"<<endl<<"1. Cash deposit."<<endl<<"2. Cash withdrawal."<<endl<<"3. Transfer money to another Account."<<endl<<"4. View current Account balance only."<<endl<<"(press any key to quit)"<<endl<<endl;
         cin>>ch1;
         double b=0.0;
         string transfer="";
         switch(ch1)
         {
            
-            case 1:
+            case '1':
             
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
@@ -260,7 +260,7 @@ int main()
             break;
 
            
-            case 2:
+            case '2':
             
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
@@ -275,14 +275,14 @@ int main()
             break;
 
            
-            case 3:
+            case '3':
             
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
             {
                 cin>>pinl;
                 if(pinl!=pen(uname))
-                    cout<<"Invlaid PIN entered. Please try again."<<endl;
+                    cout<<"Invalid PIN entered. Please try again."<<endl;
             }while(pinl!=pen(uname));
             cout<<"Enter the username of the recipient: ";
             cin>>transfer;
@@ -294,7 +294,7 @@ int main()
             break;
 
 
-            case 4:
+            case '4':
             
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
@@ -311,5 +311,8 @@ int main()
         }
         
     }
+    cout<<endl<<"Restarting... (press any key)"<<endl;
+    getch();
+    main();
     return 0;
 }
