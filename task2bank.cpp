@@ -4,6 +4,7 @@
 #include <conio.h>
 using namespace std;
 char ch1;
+string star=" ";
 string name(string user)
 {
     fstream fin;
@@ -195,7 +196,6 @@ int main()
     {
         
         case '1':
-        
         cout<<endl<<"Enter new Account username (without any blank spaces): ";
         cin>>uname;
         do
@@ -224,9 +224,7 @@ int main()
         fout<<uname<<','<<pword<<','<<b<<','<<pin<<'\n';
         break;
         
-       
         case '2':
-        
         do
         {
         cout<<endl<<"Enter username: ";
@@ -237,7 +235,6 @@ int main()
         cout<<"Invalid username or password entered. Try again."<<endl; 
         }while(uname!=name(uname) || pword!=code(uname));
         cout<<"User authentication successful. Welcome."<<endl<<"DO NOT SHARE YOUR ACCOUNT PASSWORD/PIN WITH ANYONE."<<endl<<endl;
-         
         cout<<"Select an operation:"<<endl<<"1. Cash deposit."<<endl<<"2. Cash withdrawal."<<endl<<"3. Transfer money to another Account."<<endl<<"4. View current Account balance only."<<endl<<"(press any key to quit)"<<endl<<endl;
         cin>>ch1;
         double b=0.0;
@@ -246,7 +243,6 @@ int main()
         {
            
             case '1':
-            
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
             {
@@ -256,12 +252,14 @@ int main()
             }while(pinl!=pen(uname));
             cout<<"Enter the amount that you want to deposit: ";
             cin>>b;
-            cout<<endl<<"Transaction successful."<<endl<<"Current Account balance: INR "<<deposit(uname,b)<<endl<<"========================================================================="<<endl<<endl;
+            cout<<endl<<"Transaction successful."<<endl<<"Current Account balance: INR "<<deposit(uname,b)<<endl<<"========================================================================="<<endl;
+            cout<<"How would you rate this ATM? (1 to 5) (Any other key to skip) "<<endl;
+            cin>>star;
+            if(stod(star)>0.0)
+            cout<<"Thanks for rating us "<<star<<" stars!"<<endl<<endl;
             break;
 
-           
             case '2':
-            
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
             {
@@ -271,12 +269,14 @@ int main()
             }while(pinl!=pen(uname));
             cout<<"Enter the amount that you want to withdraw: ";
             cin>>b;
-            cout<<endl<<"Transaction successful."<<endl<<"Current Account balance: INR "<<withdraw(uname,b)<<endl<<"========================================================================="<<endl<<endl;
+            cout<<endl<<"Transaction successful."<<endl<<"Current Account balance: INR "<<withdraw(uname,b)<<endl<<"========================================================================="<<endl;
+            cout<<"How would you rate this ATM? (1 to 5) (Any other key to skip) "<<endl;
+            cin>>star;
+            if(stod(star)>0.0)
+            cout<<"Thanks for rating us "<<star<<" stars!"<<endl<<endl;
             break;
-
            
             case '3':
-            
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
             {
@@ -290,12 +290,14 @@ int main()
             cin>>b;
             deposit(transfer,b);
             withdraw(uname,b);
-            cout<<endl<<"Transaction successful."<<endl<<"Current Account balance: INR "<<viewbal(uname)<<endl<<"========================================================================="<<endl<<endl;
+            cout<<endl<<"Transaction successful."<<endl<<"Current Account balance: INR "<<viewbal(uname)<<endl<<"========================================================================="<<endl;
+            cout<<"How would you rate this ATM? (1 to 5) (Any other key to skip) "<<endl;
+            cin>>star;
+            if(stod(star)>0.0)
+            cout<<"Thanks for rating us "<<star<<" stars!"<<endl<<endl;
             break;
 
-
             case '4':
-            
             cout<<endl<<"Enter your 4-digit Account PIN: ";
             do
             {
@@ -303,12 +305,16 @@ int main()
                 if(pinl!=pen(uname))
                     cout<<"Invlaid PIN entered. Please try again."<<endl;
             }while(pinl!=pen(uname));
-            cout<<"Current Account balance: INR "<<viewbal(uname)<<" only."<<endl<<"========================================================================="<<endl<<endl;
+            cout<<"Current Account balance: INR "<<viewbal(uname)<<" only."<<endl<<"========================================================================="<<endl;
+            cout<<"How would you rate this ATM? (1 to 5) (Any other key to skip) "<<endl;
+            cin>>star;
+            if(stod(star)>0.0)
+            cout<<"Thanks for rating us "<<star<<" stars!"<<endl<<endl;
             break;
         }
         
     }
-    cout<<endl<<"Restarting... (press any key)"<<endl<<endl;
+    cout<<endl<<"Exiting... (press any key)"<<endl<<endl;
     getch();
     return 0;
 }
