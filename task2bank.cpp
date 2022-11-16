@@ -305,14 +305,10 @@ int main()
             }while(pinl!=pen(uname));
             cout<<"Current Account balance: INR "<<viewbal(uname)<<" only."<<endl<<"========================================================================="<<endl<<endl;
             break;
-            
-        
-        
         }
         
     }
-    cout<<endl<<"Restarting... (press any key)"<<endl;
+    cout<<endl<<"Restarting... (press any key)"<<endl<<endl;
     getch();
-    main();
     return 0;
 }
